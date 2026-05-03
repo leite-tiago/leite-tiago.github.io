@@ -101,6 +101,10 @@ nav {
                 radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent);
 }
 
+.hero-content {
+    /* Ready for mouse-reactive parallax via JS */
+}
+
 .hero-content h1 {
     font-size: clamp(3rem, 8vw, 4.5rem);
     font-weight: 800;
@@ -390,7 +394,7 @@ footer {
 @media (max-width: 768px) {
     section { padding: 4rem 0; }
     .hero-content h1 { font-size: 3rem; }
-    
+
     /* Mobile Menu Styles */
     .menu-toggle {
         display: block;
@@ -424,9 +428,9 @@ footer {
         font-weight: 600;
     }
 
-    .path-card { 
-        flex-direction: column; 
-        padding: 2rem; 
+    .path-card {
+        flex-direction: column;
+        padding: 2rem;
         gap: 1.5rem;
         text-align: center;
     }
