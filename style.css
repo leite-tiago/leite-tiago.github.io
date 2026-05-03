@@ -161,7 +161,7 @@ nav {
 
 /* --- Journey --- */
 .journey-container {
-    max-width: 900px;
+    max-width: 1200px; /* Increased to allow side-by-side */
     margin: 0 auto;
 }
 
@@ -184,14 +184,18 @@ nav {
 
 .dual-path {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    position: relative;
+    flex-direction: row; /* Default side-by-side */
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .path-card {
+    flex: 1;
+    min-width: 320px;
     display: flex;
-    gap: 2rem;
+    flex-direction: column; /* Icon at top for side-by-side */
+    gap: 1.5rem;
     background: var(--bg-card);
     border: 1px solid var(--glass-border);
     border-radius: 28px;
@@ -251,11 +255,12 @@ nav {
 }
 
 .path-divider {
-    display: flex;
+    display: none; /* Hidden by default in side-by-side */
     align-items: center;
     justify-content: center;
     gap: 2rem;
     margin: 0.5rem 0;
+    width: 100%;
 }
 
 .divider-line {
@@ -360,8 +365,20 @@ footer {
 }
 
 /* --- Responsive --- */
-@media (max-width: 992px) {
-    .path-card { padding: 2.5rem; }
+@media (max-width: 1024px) {
+    .dual-path {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .path-card {
+        width: 100%;
+        max-width: 800px;
+        flex-direction: row; /* Horizontal icons again when stacked */
+    }
+    .path-divider {
+        display: flex; /* Show divider when stacked */
+    }
 }
 
 @media (max-width: 768px) {
@@ -374,7 +391,6 @@ footer {
         text-align: center;
     }
     .path-icon { margin: 0 auto; }
-    .dual-path { gap: 2rem; }
     .divider-line { display: none; }
     .divider-label { width: 100%; text-align: center; }
     #contact { padding: 4rem 0; }
