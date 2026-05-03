@@ -5,7 +5,7 @@ function reveal() {
     reveals.forEach(element => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 100;
+        const elementVisible = 30; // Reduced threshold to ensure bottom elements reveal correctly
         
         if (elementTop < windowHeight - elementVisible) {
             element.classList.add('active');
