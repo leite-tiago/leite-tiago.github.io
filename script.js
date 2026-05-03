@@ -1,40 +1,45 @@
 // Scroll Reveal Animation
-function reveal() {
+const reveal = () => {
     const reveals = document.querySelectorAll('.reveal');
-    
-    reveals.forEach(element => {
+    reveals.forEach((el) => {
         const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 30; // Reduced threshold to ensure bottom elements reveal correctly
-        
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 30; // Threshold for revealing
+
         if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('active');
+            el.classList.add('active');
         }
+    });
+};
+
+window.addEventListener('scroll', reveal);
+// Initial check on load
+window.addEventListener('load', reveal);
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Toggle icon between menu and x
+        const icon = menuToggle.querySelector('i');
+        const currentIcon = icon.getAttribute('data-lucide');
+        const newIcon = currentIcon === 'menu' ? 'x' : 'menu';
+        icon.setAttribute('data-lucide', newIcon);
+        lucide.createIcons();
     });
 }
 
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
-
-// Smooth Header background change on scroll
-const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.padding = '1rem 0';
-        header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-    } else {
-        header.style.padding = '1.5rem 0';
-        header.style.boxShadow = 'none';
-    }
-});
-
-// Optional: Parallax effect for hero
-document.addEventListener('mousemove', (e) => {
-    const heroH1 = document.querySelector('.hero-content h1');
-    if (!heroH1) return;
-    
-    const x = (window.innerWidth / 2 - e.pageX) / 50;
-    const y = (window.innerHeight / 2 - e.pageY) / 50;
-    
-    heroH1.style.transform = `translateX(${x}px) translateY(${y}px)`;
+// Close menu when a link is clicked
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+    });
 });
