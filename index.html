@@ -3,198 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiago Leite | My Portfolio</title>
-    <meta name="description" content="Welcome to my personal portfolio. Discover my projects and professional journey.">
+    <title>Tiago Leite — Software Engineer</title>
+    <meta name="description" content="Software engineer from Lisbon. Building distributed systems, backend APIs, and full-stack applications with Java, Spring Boot, Angular, and PostgreSQL.">
+    <link rel="canonical" href="https://leite-tiago.github.io/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Tiago Leite — Software Engineer">
+    <meta property="og:description" content="Software engineer from Lisbon. Building distributed systems, APIs, and full-stack applications with Java, Spring Boot, Angular, and PostgreSQL.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leite-tiago.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Tiago Leite — Software Engineer">
+    <meta name="twitter:description" content="Software engineer from Lisbon. Building distributed systems, APIs, and full-stack applications with Java, Spring Boot, Angular, and PostgreSQL.">
+
+    <!-- Fonts preconnect and non-blocking load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tiago Leite",
+      "jobTitle": "Software Engineer",
+      "url": "https://leite-tiago.github.io/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lisbon",
+        "addressCountry": "Portugal"
+      },
+      "sameAs": [
+        "https://github.com/leite-tiago",
+        "https://www.linkedin.com/in/leite-tiago"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Deloitte"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Faculty of Sciences, University of Lisbon (FCUL)"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "42 Lisbon"
+        }
+      ],
+      "knowsAbout": ["Java", "Spring Boot", "Angular", "gRPC", "PostgreSQL", "Kafka", "Docker", "Distributed Systems"]
+    }
+    </script>
 </head>
 <body>
 
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header -->
     <header>
-        <nav class="container">
-            <div class="logo">TL.</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <i data-lucide="menu"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <a href="#home" class="logo" aria-label="Tiago Leite Homepage">tiago<span>.</span>leite</a>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <line x1="3" y1="5" x2="17" y2="5"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                    <line x1="3" y1="15" x2="17" y2="15"/>
+                </svg>
+            </button>
+            <nav aria-label="Main Navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" class="nav-item">Home</a></li>
+                    <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
+    <!-- Main Content -->
+    <main id="main-content" tabindex="-1">
+
+        <!-- Hero -->
         <section id="home" class="hero">
             <div class="container hero-content">
-                <h1 class="reveal">Turning ideas into <span style="color: var(--accent-primary)">code</span>.</h1>
-                <p class="reveal">Developer focused on creating modern, fluid, and high-impact digital experiences.</p>
-                <div class="reveal" style="margin-top: 2rem;">
-                    <a href="#projects" class="btn-primary">View Projects</a>
+                <div class="hero-label reveal">
+                    <span class="dot" aria-hidden="true"></span>
+                    Software Engineer &bull; Tech Analyst at Deloitte
+                </div>
+                <h1 class="reveal reveal-delay-1">Building software,<br>understanding <em>systems</em></h1>
+                <p class="hero-intro reveal reveal-delay-2">
+                    I'm Tiago Leite — a software engineer from Lisbon with a Computer Engineering degree from FCUL, practical systems training at 42, and experience building distributed architectures, APIs, and resilient web applications.
+                </p>
+                <div class="hero-actions reveal reveal-delay-3">
+                    <a href="#projects" class="btn-primary">
+                        View Projects
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                    <a href="https://github.com/leite-tiago" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub Profile
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="container">
-            <h2 class="section-title reveal">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1: Code Arena -->
-                <article class="project-card reveal">
-                    <div class="project-content" style="padding-top: 2.5rem;">
-                        <i data-lucide="swords" style="color: var(--accent-primary); width: 40px; height: 40px;"></i>
-                        <h3>Code Arena</h3>
-                        <p style="color: var(--text-dim)">Competitive programming platform for real-time coding duels and challenges. Built with a distributed architecture for scalability.</p>
-                        <div class="project-tags" style="margin-top: 1rem;">
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Selected Work</span>
+                    <h2 class="section-title">Engineering Projects</h2>
+                    <p class="section-subtitle">Real-world applications with real architectural constraints: multi-tier communication, microservices, containerization, and full-stack persistence.</p>
+                </div>
+
+                <!-- Featured: TascaEats -->
+                <article class="project-featured reveal">
+                    <div class="project-featured-inner">
+                        <div class="project-featured-visual">
+                            <!-- Architectural Diagram Visualization -->
+                            <div class="arch-diagram" aria-label="TascaEats Multi-tier Architecture">
+                                <div class="arch-badge-header">
+                                    <span class="arch-status-dot"></span>
+                                    <span>Distributed System Architecture</span>
+                                </div>
+
+                                <!-- Clients -->
+                                <div class="arch-tier">
+                                    <span class="arch-tier-label">Client Layer</span>
+                                    <div class="arch-nodes-grid">
+                                        <div class="arch-node">
+                                            <div class="arch-node-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                            </div>
+                                            <div class="arch-node-info">
+                                                <strong>Web UI</strong>
+                                                <span>Thymeleaf / SSR</span>
+                                            </div>
+                                        </div>
+                                        <div class="arch-node">
+                                            <div class="arch-node-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect width="18" height="18" x="3" y="3" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                                            </div>
+                                            <div class="arch-node-info">
+                                                <strong>Desktop App</strong>
+                                                <span>JavaFX / Native</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Connecting Protocols -->
+                                <div class="arch-links">
+                                    <div class="arch-link">
+                                        <div class="arch-line"><span class="pulse-packet"></span></div>
+                                        <span class="arch-protocol-tag">REST / JSON</span>
+                                    </div>
+                                    <div class="arch-link">
+                                        <div class="arch-line"><span class="pulse-packet alt"></span></div>
+                                        <span class="arch-protocol-tag highlight">gRPC / Protobuf</span>
+                                    </div>
+                                </div>
+
+                                <!-- Backend Services -->
+                                <div class="arch-tier">
+                                    <span class="arch-tier-label">Service & Orchestration Layer</span>
+                                    <div class="arch-nodes-grid">
+                                        <div class="arch-node arch-node-primary">
+                                            <div class="arch-node-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                                            </div>
+                                            <div class="arch-node-info">
+                                                <strong>Spring Boot</strong>
+                                                <span>Monolith &rarr; Microservices</span>
+                                            </div>
+                                        </div>
+                                        <div class="arch-node">
+                                            <div class="arch-node-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 3a9 9 0 0 1 9 9m-9 9a9 9 0 0 1-9-9"/></svg>
+                                            </div>
+                                            <div class="arch-node-info">
+                                                <strong>Apache Kafka</strong>
+                                                <span>Event-Driven Broker</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Connecting Lines -->
+                                <div class="arch-links-simple">
+                                    <div class="arch-line-single"></div>
+                                </div>
+
+                                <!-- Data Layer -->
+                                <div class="arch-tier">
+                                    <span class="arch-tier-label">Data & Isolation Layer</span>
+                                    <div class="arch-nodes-grid">
+                                        <div class="arch-node">
+                                            <div class="arch-node-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                                            </div>
+                                            <div class="arch-node-info">
+                                                <strong>PostgreSQL</strong>
+                                                <span>Isolated DB Schemas</span>
+                                            </div>
+                                        </div>
+                                        <div class="arch-node">
+                                            <div class="arch-node-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
+                                            </div>
+                                            <div class="arch-node-info">
+                                                <strong>Docker</strong>
+                                                <span>Compose Orchestration</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-featured-content">
+                            <span class="project-type">Featured Architecture Case</span>
+                            <h3 class="project-name">TascaEats</h3>
+                            <p class="project-description">
+                                A multi-platform food delivery ecosystem engineered across three deliberate evolutionary phases: starting as a clean Spring Boot monolith with RESTful APIs, adding native desktop (JavaFX) and web (Thymeleaf) clients communicating over high-performance gRPC, and transitioning toward containerized microservices with Kafka event streaming and isolated database schemas.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">gRPC / Protobuf</span>
+                                <span class="tag">Apache Kafka</span>
+                                <span class="tag">JavaFX</span>
+                                <span class="tag">Thymeleaf</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                            <div class="project-breakdown">
+                                <span class="breakdown-title">Architectural Evolution</span>
+                                <ul class="breakdown-list">
+                                    <li><strong>Phase 1:</strong> Monolithic Spring Boot core with Hibernate JPA and relational PostgreSQL models.</li>
+                                    <li><strong>Phase 2:</strong> Dual-client interfaces (Web &amp; Desktop) integrating bidirectional gRPC streams alongside REST.</li>
+                                    <li><strong>Phase 3:</strong> Event-driven decoupled services orchestrated with Kafka message queues and Docker.</li>
+                                </ul>
+                            </div>
+                            <div class="project-links" style="margin-top: var(--space-lg);">
+                                <a href="https://github.com/leite-tiago/TascaEats" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View TascaEats repository on GitHub">
+                                    Source Code
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                                </a>
+                                <a href="https://youtu.be/iMTtWbE4Zqc" target="_blank" rel="noopener noreferrer" class="project-link project-link-demo" aria-label="Watch TascaEats video demo on YouTube">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    Watch Video Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Secondary Projects -->
+                <div class="projects-secondary">
+
+                    <!-- Code Arena -->
+                    <article class="project-card reveal">
+                        <div class="card-badge-row">
+                            <span class="project-type">42 Lisbon &bull; Final Project</span>
+                            <span class="arch-pill">WebSockets &amp; Auth</span>
+                        </div>
+                        <h3 class="project-name">Code Arena</h3>
+                        <p class="project-description">
+                            A competitive programming platform supporting real-time coding duels and matchmaking. Built as the capstone project at 42 Lisbon, combining an Angular single-page frontend with a Spring Boot backend, JWT authentication, user statistics, Docker containerization, and automated execution sandbox.
+                        </p>
+                        <div class="project-tech">
                             <span class="tag">Angular</span>
+                            <span class="tag">TypeScript</span>
                             <span class="tag">Spring Boot</span>
                             <span class="tag">PostgreSQL</span>
                             <span class="tag">Docker</span>
                         </div>
-                        <a href="https://github.com/leite-tiago/ft_transcendence" target="_blank" class="project-link">
-                            View on GitHub <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
-                        </a>
-                    </div>
-                </article>
+                        <div class="project-breakdown">
+                            <span class="breakdown-title">Key Engineering Highlights</span>
+                            <ul class="breakdown-list">
+                                <li>Real-time duel synchronization &amp; matchmaking engine</li>
+                                <li>JWT-secured authentication and role management</li>
+                                <li>Containerized local development via Docker Compose</li>
+                            </ul>
+                        </div>
+                        <div class="project-links" style="margin-top: auto; padding-top: var(--space-md);">
+                            <a href="https://github.com/leite-tiago/ft_transcendence" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Code Arena repository on GitHub">
+                                Source Code
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                    </article>
 
-                <!-- Project 2: Music Collection Manager -->
-                <article class="project-card reveal">
-                    <div class="project-content" style="padding-top: 2.5rem;">
-                        <i data-lucide="disc" style="color: var(--accent-primary); width: 40px; height: 40px;"></i>
-                        <h3>Music Collection Manager</h3>
-                        <p style="color: var(--text-dim)">Web application for managing physical music collections. Features include discography search, user profiles, and collection tracking.</p>
-                        <div class="project-tags" style="margin-top: 1rem;">
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">Express</span>
+                    <!-- Music Collection Manager -->
+                    <article class="project-card reveal reveal-delay-1">
+                        <div class="card-badge-row">
+                            <span class="project-type">FCUL &bull; Software Engineering</span>
+                            <span class="arch-pill">REST &amp; NoSQL</span>
+                        </div>
+                        <h3 class="project-name">Music Collection Manager</h3>
+                        <p class="project-description">
+                            A web platform dedicated to cataloging and managing physical music collections. Implements an Angular client communicating with an Express.js/Node.js backend, featuring discography search, relational collection indexing in MongoDB, and user profile management.
+                        </p>
+                        <div class="project-tech">
                             <span class="tag">Angular</span>
                             <span class="tag">Node.js</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">TypeScript</span>
                         </div>
-                        <a href="https://github.com/leite-tiago/Projeto-PSI" target="_blank" class="project-link">
-                            View on GitHub <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project 3: TascaEats -->
-                <article class="project-card reveal">
-                    <div class="project-content" style="padding-top: 2.5rem;">
-                        <i data-lucide="utensils" style="color: var(--accent-primary); width: 40px; height: 40px;"></i>
-                        <h3>TascaEats</h3>
-                        <p style="color: var(--text-dim)">A multi-platform food delivery ecosystem for local restaurants. Features a Spring Boot backend with REST and gRPC supporting Web and Native interfaces.</p>
-                        <div class="project-tags" style="margin-top: 1rem;">
-                            <span class="tag">Spring Boot</span>
-                            <span class="tag">JavaFX</span>
-                            <span class="tag">gRPC</span>
-                            <span class="tag">PostgreSQL</span>
+                        <div class="project-breakdown">
+                            <span class="breakdown-title">Key Engineering Highlights</span>
+                            <ul class="breakdown-list">
+                                <li>RESTful API design with Express middleware routing</li>
+                                <li>MongoDB aggregation pipelines for physical formats &amp; pressings</li>
+                                <li>Modular Angular components with reactive state handling</li>
+                            </ul>
                         </div>
-                        <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
-                            <a href="https://youtu.be/iMTtWbE4Zqc" target="_blank" class="project-link" style="margin-top: 0;">
-                                View Demo <i data-lucide="play-circle" style="width: 16px; height: 16px;"></i>
-                            </a>
-                            <a href="https://github.com/leite-tiago/TascaEats" target="_blank" class="project-link" style="margin-top: 0;">
-                                View on GitHub <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
+                        <div class="project-links" style="margin-top: auto; padding-top: var(--space-md);">
+                            <a href="https://github.com/leite-tiago/Projeto-PSI" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Music Collection Manager repository on GitHub">
+                                Source Code
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
                             </a>
                         </div>
-                    </div>
-                </article>
-            </div>
+                    </article>
+                </div>
 
-            <!-- View More GitHub Button -->
-            <div class="view-more-container reveal" style="margin-top: 2rem; text-align: center;">
-                <p style="color: var(--text-dim); margin-bottom: 1rem; font-size: 1.1rem;">Want to see more projects?</p>
-                <a href="https://github.com/leite-tiago" target="_blank" class="btn-github">
-                    <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: currentColor; margin-right: 10px;">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    Check out my GitHub
-                </a>
+                <!-- View More on GitHub -->
+                <div class="projects-footer reveal">
+                    <a href="https://github.com/leite-tiago" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Explore all repositories on GitHub
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- About/Journey Section -->
-        <section id="about" class="container">
-            <h2 class="section-title reveal">My Journey</h2>
-            <div class="journey-container">
-                <div class="journey-header reveal">
-                    <span class="journey-badge">Dual Education Path</span>
-                    <p style="color: var(--text-dim); margin-top: 1rem;">I am currently pursuing a Bachelor's degree and an intensive technical program simultaneously, bridging the gap between academic theory and practical software mastery.</p>
+        <!-- About -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Background &amp; Approach</span>
+                    <h2 class="section-title">About Me</h2>
                 </div>
-                <div class="dual-path">
-                    <div class="path-card reveal">
-                        <div class="path-icon"><i data-lucide="graduation-cap"></i></div>
-                        <div class="path-details">
-                            <h4 class="path-date">2023 - 2026 (Expected)</h4>
-                            <h3>BSc in Computer Science</h3>
-                            <p class="path-institution">FCUL - Faculty of Sciences, University of Lisbon</p>
-                            <p class="path-description">Deep diving into algorithms, data structures, and computer engineering foundations.</p>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>
+                            I hold a Bachelor's degree in Computer Engineering from FCUL (University of Lisbon) and completed the intensive, peer-driven software curriculum at 42 Lisbon.
+                        </p>
+                        <p>
+                            This dual foundation gave me both sides of the coin: rigorous academic grounding in algorithms, operating systems, and database theory, alongside hundred-hour deep dives building Unix utilities, graphics engines, and distributed network services from scratch in C and C++.
+                        </p>
+                        <p>
+                            Professionally, I work as a Tech Analyst at Deloitte, applying engineering discipline to enterprise applications. Whether designing a clean REST/gRPC API, establishing transactional integrity in PostgreSQL, or containerizing microservices, my focus is consistently on clarity, resilience, and understanding how the system behaves under the hood.
+                        </p>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="timeline reveal reveal-delay-1">
+                        <div class="timeline-item current">
+                            <span class="timeline-date">2024 — Present</span>
+                            <div class="timeline-role">Tech Analyst</div>
+                            <div class="timeline-org">Deloitte &bull; Lisbon</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">Completed</span>
+                            <div class="timeline-role">Software Engineering Curriculum</div>
+                            <div class="timeline-org">42 Lisbon &bull; Systems &amp; Low-level Programming</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">Graduated</span>
+                            <div class="timeline-role">BSc in Computer Engineering</div>
+                            <div class="timeline-org">Faculty of Sciences, University of Lisbon (FCUL)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div id="skills">
+                    <div class="skills-grid reveal">
+                        <div class="skill-group">
+                            <h3>Languages</h3>
+                            <ul class="skill-list">
+                                <li>Java</li>
+                                <li>TypeScript</li>
+                                <li>C / C++</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h3>Backend &amp; Distributed</h3>
+                            <ul class="skill-list">
+                                <li>Spring Boot</li>
+                                <li>REST APIs</li>
+                                <li>gRPC &amp; Protobuf</li>
+                                <li>Apache Kafka</li>
+                                <li>Node.js / Express</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h3>Frontend &amp; UI</h3>
+                            <ul class="skill-list">
+                                <li>Angular</li>
+                                <li>JavaFX</li>
+                                <li>Thymeleaf</li>
+                                <li>HTML5 / Modern CSS</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h3>Data &amp; Infrastructure</h3>
+                            <ul class="skill-list">
+                                <li>PostgreSQL</li>
+                                <li>MongoDB</li>
+                                <li>Docker &amp; Compose</li>
+                                <li>Git &amp; GitHub Actions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Get in Touch</span>
+                    <h2 class="section-title">Contact</h2>
+                </div>
+
+                <div class="contact-layout">
+                    <div class="contact-info reveal">
+                        <p>
+                            Interested in collaborating, discussing distributed systems, or exploring engineering opportunities? Feel free to reach out directly via email, connect on LinkedIn, or drop a message through the form.
+                        </p>
+                        <div class="contact-links">
+                            <div class="contact-email-row">
+                                <a href="mailto:tiagobscleite@gmail.com" class="contact-link-item" id="main-email-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                    tiagobscleite@gmail.com
+                                </a>
+                                <button type="button" class="btn-copy" id="btn-copy-email" aria-label="Copy email address to clipboard">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                    <span class="copy-text">Copy</span>
+                                </button>
+                            </div>
+                            <a href="https://github.com/leite-tiago" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                github.com/leite-tiago
+                            </a>
+                            <a href="https://www.linkedin.com/in/leite-tiago" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                linkedin.com/in/leite-tiago
+                            </a>
                         </div>
                     </div>
 
-                    <div class="path-divider reveal">
-                        <div class="divider-line"></div>
-                        <div class="divider-label">Simultaneous Execution</div>
-                        <div class="divider-line"></div>
-                    </div>
-
-                    <div class="path-card reveal">
-                        <div class="path-icon"><i data-lucide="code"></i></div>
-                        <div class="path-details">
-                            <h4 class="path-date">2024 - 2026 (Expected)</h4>
-                            <h3>42 Lisbon</h3>
-                            <p class="path-institution">Final Project Phase</p>
-                            <p class="path-description">Peer-to-peer learning environment focused on rigorous problem-solving and low-level programming.</p>
+                    <form id="contact-form" class="contact-form reveal reveal-delay-1" action="https://formspree.io/f/tiagobscleite@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="_replyto" placeholder="your@email.com" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" placeholder="Your message..." rows="5" required></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn-primary" id="contact-submit">Send Message</button>
+                            <a href="mailto:tiagobscleite@gmail.com" id="fallback-email-btn" class="btn-secondary" style="display: none;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 15px; height: 15px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                                Open Email Draft
+                            </a>
+                        </div>
+                        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                        <p class="form-note">Prefer standard email? Send to <a href="mailto:tiagobscleite@gmail.com" style="color: var(--accent);">tiagobscleite@gmail.com</a></p>
+                    </form>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="container">
-            <h2 class="section-title reveal">Let's Connect</h2>
-            <p class="reveal" style="color: var(--text-dim); margin-bottom: 3rem;">I'm always open to new challenges and collaborations. Feel free to reach out!</p>
-
-            <form action="https://formspree.io/f/tiagobscleite@gmail.com" method="POST" class="contact-form reveal">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="_replyto" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
-        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/leite-tiago" target="_blank" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: currentColor;">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
+            <span class="footer-left">&copy; 2026 Tiago Leite &bull; Lisbon, Portugal</span>
+            <div class="footer-links">
+                <a href="https://github.com/leite-tiago" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/leite-tiago" target="_blank" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: currentColor;">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
+                <a href="https://www.linkedin.com/in/leite-tiago" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
             </div>
-            <p style="color: var(--text-dim); font-size: 0.9rem;">&copy; 2026 Tiago Leite</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
 </body>
 </html>
